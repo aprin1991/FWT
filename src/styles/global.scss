@@ -1,0 +1,44 @@
+@import './header';
+body {
+    background: #162340;
+}
+
+.card-hover {
+    >img {
+        transition: all ease 0.4s;
+        cursor: pointer;
+    }
+    &:hover {
+        >img {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    width: 100%;
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 46px;
+        height: 46px;
+        cursor: pointer;
+        color: #fff;
+        border: 1px solid #ccc;
+        &.current {
+            background-color: #fff;
+            color: #162340
+        }
+    }
+}
+
+.hero-detail {
+    background: url('./../assets/images/bg1.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
