@@ -1,7 +1,9 @@
-@import './header';
+@import "./header";
 body {
     background: #162340;
 }
+
+@media screen {}
 
 .card-hover {
     >img {
@@ -11,6 +13,16 @@ body {
     &:hover {
         >img {
             transform: scale(1.2);
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .card-hover {
+        &:hover {
+            >img {
+                transform: scale(1);
+            }
         }
     }
 }
@@ -32,13 +44,13 @@ body {
         border: 1px solid #ccc;
         &.current {
             background-color: #fff;
-            color: #162340
+            color: #162340;
         }
     }
 }
 
 .hero-detail {
-    background: url('./../assets/images/bg1.png');
+    background: url("./../assets/images/bg1.png");
     background-size: 100%;
     background-repeat: no-repeat;
 }

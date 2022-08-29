@@ -10,12 +10,12 @@ const Header: FC<THeaderProps> = ({ onSearch }) => {
     <div>
       <img
         src={heroHeader}
-        className="w-full h-96 object-cover opacity-70 hero-header"
+        className="w-full h-48 md:h-96 object-cover opacity-70"
         alt="hero header"
       />
-      <header className="w-full flex justify-between items-center p-4 px-16 bg-slate-900">
+      <header className="w-full flex justify-between items-center gap-8 p-4 md:px-16 bg-slate-900">
         <Link to="/">
-          <img src={mainLogo} className="w-24" alt="logo" />
+          <img src={mainLogo} className="w-16 md:w-24 h-auto" alt="logo" />
         </Link>
         <SearchBar onSearch={onSearch} />
       </header>

@@ -26,14 +26,14 @@ const Hero = () => {
         CircleLoading
       ) : (
         <div className="">
-          <figure className="flex gap-12 ">
+          <figure className="flex flex-col md:flex-row gap-12 ">
             <img
-              className="w-1/3 h-96 object-cover -rotate-12 hover:rotate-0 transition-all"
+              className="w-full md:w-72 h-64 object-cover md:-rotate-12 hover:rotate-0 transition-all"
               src={`${data?.thumbnail?.path}.${data?.thumbnail?.extension}`}
               alt={data?.name}
             />
-            <figcaption className="w-2/3">
-              <h1 className="text-xl text-white mb-4 font-bold">
+            <figcaption className="w-full md:w-2/3 mt-8 md:mt-0">
+              <h1 className="text-xl text-white mb-4 font-bold text-center md:text-left">
                 {data?.name}
               </h1>
               <p className="text-md text-white mb-4">{data?.description}</p>

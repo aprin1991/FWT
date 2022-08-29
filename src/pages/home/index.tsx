@@ -15,9 +15,10 @@ const Home = () => {
   const [search, setSearch] = useState<String>("");
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const pageQuery = +searchParams.get("page") - 1;
   useEffect(() => {
     getCharacters();
-    searchParams.get("page") && setPage(+searchParams.get("page") - 1);
+    pageQuery && setPage(pageQuery);
   }, []);
   useEffect(() => {
     getCharacters();
@@ -28,9 +29,7 @@ const Home = () => {
     const { data } = await services.fetch({
       endPoint: "v1/public/characters",
       body: {
-        offset:
-          (searchParams.get("page") ? +searchParams.get("page") : page) *
-          pageLimit,
+        offset: (pageQuery ? pageQuery : page) * pageLimit,
         limit: pageLimit,
         ...(search && { name: search }),
       },
@@ -47,6 +46,7 @@ const Home = () => {
     setSearch(search);
   };
   const handleChangePage = (page) => {
+    window.scrollTo({ behavior: "smooth", top: 0 });
     navigate({
       pathname: "/",
       search: `?page=${page + 1}`,
